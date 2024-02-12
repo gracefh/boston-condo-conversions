@@ -1,6 +1,5 @@
 # boston-condo-conversions
 
-
 This repository contains code to find the condo conversions that took place in Boston from 2015 to 2024. In order to do so, we used [property assessment data](https://data.boston.gov/dataset/property-assessment) from Analyze Boston. 
 
 ## Code
@@ -11,14 +10,77 @@ For each condo conversion, we kept 1 data entry and augmented it with the number
 
 ## Data fields
 
-There are some computed data fields:
+### Conversion Fields
 * `ADDRESS`: The merged street number, name, and suffix
 * `num_condo_units`: The number of condo units after conversion
 * `prior_year`: The year just prior to the conversion, as described above (indicates the year that `_prior` data comes from)
 * `post_year`: The year after `prior_year` (indicates the year that `_post` data comes from)
 
-And some special cases:
-* `YR_REMODEL`: For years in which the year remodeled column was named `YR_REMOD`, we renamed all of them to `YR_REMODEL` for greater consistency
-* [REMOVED] `full_address`: This column was only present in 2015 and overlaps with the calculated `ADDRESS` column, so we removed it.
+### Spatial fields
+From [Analyze Boston's 2022 Parcel data](https://data.boston.gov/dataset/parcels-2022/resource/1b2cd4a0-c23a-4c11-b880-1255bb4d8734)
+* `OBJECTID`
+* `LOC_ID`
+* `POLY_TYPE`
+* `MAP_NO`
+* `SOURCE`
+* `PLAN_ID`
+* `LAST_EDIT`
+* `BND_CHK`
+* `NO_MATCH`
+* `TOWN_ID`
+* `Shape_STArea__`	
+* `Shape_STLength__`
+* `ShapeSTArea`
+* `ShapeSTLength`
 
-The other data fields correspond to either the `prior_year` or the `post_year`'s data fields; more information about them can be found on Analyze Boston's [website](https://data.boston.gov/dataset/property-assessment) (if a year doesn't have a data key, that means its data comes from the most recent prior data key PDF).
+### General Fields
+The following data fields correspond to either the `prior_year` or the `post_year`'s data fields; more information about them can be found on Analyze Boston's [website](https://data.boston.gov/dataset/property-assessment) (if a year doesn't have a data key, that means its data comes from the most recent prior data key PDF).
+
+* `BDRM_COND` - Bedroom condition
+* `BED_RMS` - Total number of bedrooms in structure
+* `BLDG_SEQ` - Building numbers of parcel
+* `BLDG_TYPE` - Building type and style
+* `BLDG_VALUE` - Total assessed building value
+* `CD_FLOOR` - Number of floors of condominium unit
+* `CITY` - City or Town of parcel
+* `CM_ID` - 10-digit parcel number of Condo Main, which houses all related condo units
+* `COM_UNITS` - Number of Commercial units
+* `EXT_COND` - Exterior condition of parcel
+* `FULL_BTH` - Total number of full baths in the structure
+* `GIS_ID` - GIS id
+* `GROSS_AREA` - Gross floor area
+* `GROSS_TAX` - Tax bill amount based on total assessed value multiplied by the tax rateper thousand
+* `HEAT_TYPE` - Structure heating type
+* `HLF_BTH` - Total number of half baths in the structure
+* `INT_COND` - Interior Condition of parcel
+* `LAND_SF` - Parcel's land area in square feet (legal area)
+* `LAND_VALUE` - Total assessed land value
+* `LIVING_AREA` - Living area square footage of the property
+* `LU` - type of property (Land use)
+* `LU_DESC` - Land use description
+* `LUC` - Land use code
+* `NUM_BLDGS` - Total buildings of parcel
+* `NUM_FLOORS` - Number of floors
+* `NUM_PARKING` - Number of parking spaces
+* `OVERALL_COND` - Overall condition of parcel
+* `PID` - Process ID (unique 10 digit number)
+* `PTYPE` - State class code
+* `R_EXT_CND` - Residential exterior condition (in older data)
+* `R_INT_CND` - Residential Interior condition (in older data)
+* `R_OVRALL_CND` - Residential overall condition (in older data)
+* `RC_UNITS` - Number of Residential/Commercial Units in a condominium building
+* `RES_FLOOR` - Number of floors (for residential units)
+* `RES_UNITS` - Number of Residential units
+* `S_EXT_CND` - Condo main exterior condition
+* `S_NUM_BLDG` - Number of buildings in condo main    
+* `ST_NAME` - Street name
+* `ST_NAME_SUF` - Street name suffix
+* `ST_NUM` - Street number
+* `STRUCTURE_CLASS` - Structural classification of building
+* `TOTAL_VALUE` - Total assessed value for property
+* `TT_RMS` - Total number of rooms in the structure
+* `UNIT_NUM` - Specific unit number within a housing complex
+* `YR_BUILT` - Year property was built
+* `YR_REMODEL` - Year property was last remodeled
+* `ZIPCODE` - Zip code
+
