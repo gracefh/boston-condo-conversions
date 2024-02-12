@@ -2,6 +2,8 @@
 
 This repository contains code to find the condo conversions that took place in Boston from 2015 to 2024. In order to do so, we used [property assessment data](https://data.boston.gov/dataset/property-assessment) from Analyze Boston. 
 
+As a note, because this data uses property assessment data spanning across a large set of years and the data formats changed across years, there will be columns that contain some null values, which can/should be filtered out for cetain kinds of analysis.
+
 ## Code
 
 All of the cleaning code can be found in `data_cleaning.ipynb`, which also contains comments to help substantiate some of the code. We counted condo conversions as addresses that only had 1 entry in a given year but multiple entries in the next year, with addresses being a combination of street number, name, and suffix. 
