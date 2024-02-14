@@ -52,7 +52,9 @@ The following data fields correspond to either the `prior_year` or the `post_yea
 * `GIS_ID` - GIS id
 * `GROSS_AREA` - Gross floor area
 * `GROSS_TAX` - Tax bill amount based on total assessed value multiplied by the tax rateper thousand
+* * `HEAT_TYP` - Structure heating type
 * `HEAT_TYPE` - Structure heating type
+* `HALF_BTH` - Total number of half baths in the structure
 * `HLF_BTH` - Total number of half baths in the structure
 * `INT_COND` - Interior Condition of parcel
 * `LAND_SF` - Parcel's land area in square feet (legal area)
